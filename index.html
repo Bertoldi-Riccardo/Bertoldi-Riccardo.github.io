@@ -1,327 +1,53 @@
+
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>BERTOPET - Pagina iniziale</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            /* Questa immagine è come esempio */
-            background-image: url('Ettore.jpg');
-            background-size: cover;
-            flex-direction: column;
-            min-height: 100vh; 
-        }
-
-        .section {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        nav {
-            position: absolute;
-            top: 250px;
-            left: 25px;
-            width: 200px;
-            background-color: rgb(252, 224, 172);
-            padding: 10px;
-        }
-
-        nav li {
-            margin-bottom: 10px; /* Spaziatura tra i pulsanti */
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: rgb(252, 224, 172);
-            color: #000;
-            text-decoration: none; /* sottolineatura */
-            border-radius: 5px; /* Angoli arrotondati */
-            transition: background-color 0.3s; /* Transizione per hover */
-        }
-
-        .button:hover {
-            background-color: #ffab40; /* Colore di sfondo al passaggio del mouse */
-        }
-
-        main {
-            flex-grow: 1;
-            padding: 20px;
-        }
-        
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgb(255, 207, 118);
-            padding: 10px;
-        }
-        header h1 {
-            margin: 0;
-            text-align: center;
-        }
-
-        /*Footer*/
-        .footer {
-            background-color: #ffab40;
-            border-radius: 5px;
-            color: rgb(252, 224, 172);
-            padding: 3rem 0;
-            text-align: center;
-            max-width: fit-content;
-            font-size: 1.4rem;
-            position:relative;
-            margin-top: auto;
-            /* Aggiunto per separare il footer dal contenuto */
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            grid-gap: 1rem;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-links {
-            grid-column: span 2;
-            /* Occupa due colonne */
-            align-self: start;
-            /* Allinea in alto */
-            margin-bottom: 2rem;
-            text-align: left;
-            /* Allinea il testo a sinistra */
-        }
-
-        .footer-links h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: rgb(252, 224, 172);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #ff5e00;
-        }
-
-        .footer-info {
-            text-align: left;
-        }
-
-        .footer-info p {
-            margin-bottom: 1rem;
-        }
-
-        .footer-info .copyright {
-            font-size: 0.9rem;
-            margin-top: 2rem;
-        }
-
-        .content {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .content div {
-            width: 48%;
-            background-color: #eee;
-            padding: 10px;
-        }
-        
-        /* Stili per la finestra modale */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            font-family: 'Roboto', sans-serif;
-            background-color: #fff;
-            margin: 15%;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 750px;
-            text-align: center;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chernobyl & Nuclear Power</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <main>
-            <header>
-                <h1>BERTOPET</h1>
-            </header>
-            <div class="content">
-                <div>he he</div>
-                <div>:)</div>
-            </div>
-        </main>
-        <nav>
-            <ul>
-                <li><a href="animali_domestici.html" class="button">Animali domestici</a></li>
-                <li><a href="cibi_animali.html" class="button">Cibi per animali domestici</a></li>
-                <li><a href="oggetti_animali.html" class="button">Oggetti necessari/ricreativi per animali domestici</a></li>
-            </ul>
-        </nav>
-    </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Chernobyl & Nuclear Power</h1>
+            <p>Exploring the past, present, and future of nuclear energy.</p>
+            <a href="#explore" class="cta-button">Explore Now</a>
+        </div>
+    </header>
 
-    <div class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <ul>
-                    <li><a href="#" class="modal-link" data-modal="servizi">Servizi</a></li>
-                    <li><a href="#" class="modal-link" data-modal="contatti">Contattaci</a></li>
-                </ul>
+    <section id="explore" class="content-section">
+        <h2>Discover the Story</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>The Chernobyl Disaster</h3>
+                <p>Learn about the events of April 26, 1986, and their lasting impact.</p>
             </div>
-            <div class="footer-info">
-                <p>Via dell’Azienda, 123, Verona, Italia</p>
-                <p>T. (+39) 000 000 0000</p>
-                <p>info@bertopet.it</p>
+            <div class="card">
+                <h3>How Nuclear Power Works</h3>
+                <p>Understand the science behind nuclear energy and its benefits.</p>
+            </div>
+            <div class="card">
+                <h3>The Future of Nuclear Energy</h3>
+                <p>Explore advancements in nuclear technology and its role in a sustainable future.</p>
             </div>
         </div>
-        <div class="copyright">
-            © 2024 BERTOPET – IT03747070245<br>
-            <a href="#" class="privacy-cookies-link">Privacy - Cookies</a>
+    </section>
+
+    <section class="interactive-section">
+        <h2>Interactive Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">1986: Chernobyl Disaster</div>
+            <div class="timeline-item">2000: Nuclear Renaissance</div>
+            <div class="timeline-item">2025: Fusion Breakthroughs</div>
         </div>
-    </div>
+    </section>
 
-    <!-- Modale per Servizi -->
-    <div id="serviziModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p style="font-size: 1.6rem; font-weight: bold; color: #ff0000;">Benvenuto nella sezione Servizi di Bertopet</p>
-            <p>Offriamo una vasta gamma di animali, cibi per animali e oggetti ricreativi per soddisfare tutte le esigenze della tua creatura. Dai servizi di acquisto degli animali alla personalizzazione degli acquisti, siamo qui per aiutarti a segliere la migliore cosa per te.</p>
-            <p>Scopri di più consultando il nostro team esperto. Non esitare a contattarci per ulteriori informazioni sui nostri servizi per te!</p>
-        </div>
-    </div>
-    
-    <!-- Modale per Contatti -->
-    <div id="contattiModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 style="font-size: 1.8rem; font-weight: bold; color: #ff0000; margin-bottom: 1rem;">Contattaci</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 1rem;">Telefono: (+39) 000 000 0000</p>
-            <p style="font-size: 1.2rem; margin-bottom: 1rem;">Mail: info@bertopet.it</p>
-        </div>
-    </div>
-    
-    <!-- Finesta che si apre una volta premuto il pulsante(Finestra modale) -->
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 style="font-size: 1.8rem; font-weight: bold; color: #ff0000; margin-bottom: 1rem;">Privacy Policy</h2>
-            
-            <h3 style="font-size: 1.4rem; font-weight: bold;">Introduzione</h3>
-            <p>La tua privacy è importante per noi. Questa Privacy Policy descrive come raccogliamo, utilizziamo, e proteggiamo le tue informazioni personali quando visiti il nostro sito web BERTOPET.</p>
-            
-            <h3 style="font-size: 1.4rem; font-weight: bold;">Informazioni che Raccogliamo</h3>
-            <p>Raccogliamo diversi tipi di informazioni per vari scopi, tra cui:</p>
-            <ul>
-                <li><strong>Informazioni Personali:</strong> Nome, indirizzo email, numero di telefono, indirizzo di residenza.</li>
-                <li><strong>Dati di Utilizzo:</strong> Informazioni su come accedi e utilizzi il nostro sito web, inclusi l’indirizzo IP, il tipo di browser, le pagine visitate, l’ora e la data della visita.</li>
-            </ul>
-            
-            <h3 style="font-size: 1.4rem; font-weight: bold;">Uso delle Informazioni</h3>
-            <p>Utilizziamo le informazioni raccolte per:</p>
-            <ul>
-                <li>Fornire e mantenere il nostro servizio.</li>
-                <li>Notificarti riguardo a cambiamenti nel nostro servizio.</li>
-                <li>Offrirti supporto clienti.</li>
-                <li>Analizzare l’uso del nostro sito web per migliorarlo.</li>
-            </ul>
-            
-            <h3 style="font-size: 1.4rem; font-weight: bold;">Protezione delle Informazioni</h3>
-            <p>Adottiamo misure di sicurezza adeguate per proteggere le tue informazioni personali da accessi non autorizzati, alterazioni, divulgazioni o distruzioni.</p>
-            
-            <h3 style="font-size: 1.4rem; font-weight: bold;">Diritti degli Utenti</h3>
-            <p>Hai il diritto di accedere, correggere o cancellare le tue informazioni personali. Puoi esercitare questi diritti contattandoci all’indirizzo email fornito sul nostro sito.</p>
-            
-            <h3 style="font-size: 1.4rem; font-weight: bold;">Modifiche alla Privacy Policy</h3>
-            <p>Ci riserviamo il diritto di aggiornare questa Privacy Policy in qualsiasi momento. Ti informeremo di eventuali modifiche pubblicando la nuova Privacy Policy sul nostro sito web
-            
-            <h3 style="font-size: 1.4rem; font-weight: bold;">Modifiche alla Privacy Policy</h3> 
-            <p>Ci riserviamo il diritto di aggiornare questa Privacy Policy in qualsiasi momento. Ti informeremo di eventuali modifiche pubblicando la nuova Privacy Policy sul nostro sito web.</p>
-        </div>
-    </div>
+    <footer>
+        <p>&copy; 2025 Chernobyl & Nuclear Power. All rights reserved.</p>
+    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const modalLinks = document.querySelectorAll('.modal-link');
-            const modals = document.querySelectorAll('.modal');
-            const closeButtons = document.querySelectorAll('.close');
-            const privacyCookiesLink = document.querySelector('.privacy-cookies-link');
-
-            modalLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const modalId = link.getAttribute('data-modal');
-                    document.getElementById(`${modalId}Modal`).style.display = 'flex';
-                });
-            });
-
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    modals.forEach(modal => {
-                        modal.style.display = 'none';
-                    });
-                });
-            });
-
-            privacyCookiesLink.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.getElementById('privacyModal').style.display = 'flex';
-            });
-
-
-            //const goToInstagramButton = document.getElementById('goToInstagram');
-            //goToInstagramButton.addEventListener('click', function () {
-            //    window.open('https://www.instagram.com/AlfaAgency.Concessionaria', '_blank');
-            //});
-
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,11 +1,9 @@
 // Function to toggle between English and Italian
 document.getElementById('flag-en').addEventListener('click', function() {
-    // Show English and hide Italian
     toggleLanguage('en');
 });
 
 document.getElementById('flag-it').addEventListener('click', function() {
-    // Show Italian and hide English
     toggleLanguage('it');
 });
 

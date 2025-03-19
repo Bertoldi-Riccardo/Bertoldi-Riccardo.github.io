@@ -129,18 +129,22 @@ footer {
     padding: 20px;
     text-align: center;
 }
-/* Language Toggle Button (Top Right) */
+/* Language Toggle Button (Center-Aligned) */
 .lang-toggle {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the button horizontally */
     z-index: 10;
     background-color: #00ffcc; /* Same as Explore button background */
     border-radius: 5px; /* Rounded corners like the Explore button */
     padding: 5px 15px; /* Adding padding around the flags */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+    display: flex; /* Ensure flags are aligned horizontally */
+    justify-content: center; /* Center align flags within the button */
 }
 
+/* Individual flag button styles */
 .flag-btn {
     font-size: 24px;
     cursor: pointer;
@@ -152,6 +156,7 @@ footer {
     background-color: #00ccaa; /* Darker shade on hover */
     border-radius: 5px;
 }
+
 
 /* Hover Effect for the whole language toggle */
 .lang-toggle:hover {

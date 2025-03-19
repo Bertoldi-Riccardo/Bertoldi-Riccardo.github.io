@@ -26,3 +26,4 @@ function toggleLanguage(lang) {
     }
 }
 
+

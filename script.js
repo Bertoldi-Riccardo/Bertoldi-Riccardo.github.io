@@ -25,5 +25,3 @@ function toggleLanguage(lang) {
         document.getElementById('flag-it').style.display = 'none';
     }
 }
-
-

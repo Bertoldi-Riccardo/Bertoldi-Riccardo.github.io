@@ -1,12 +1,13 @@
 document.getElementById('lang-toggle').addEventListener('click', function() {
-    // Toggle between English and Italian
+    // Get all elements with data-lang="en" and data-lang="it"
     const langElementsEn = document.querySelectorAll('[data-lang="en"]');
     const langElementsIt = document.querySelectorAll('[data-lang="it"]');
     
-    langElementsEn.forEach(element => element.style.display = element.style.display === 'none' ? 'block' : 'none');
-    langElementsIt.forEach(element => element.style.display = element.style.display === 'none' ? 'block' : 'none');
-
-    // Change the button text based on the current language
+    // Toggle display of English and Italian elements
+    langElementsEn.forEach(element => element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none');
+    langElementsIt.forEach(element => element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none');
+    
+    // Change button text based on the current language
     if (langElementsEn[0].style.display === 'none') {
         document.getElementById('lang-toggle').textContent = 'Switch to English';
     } else {

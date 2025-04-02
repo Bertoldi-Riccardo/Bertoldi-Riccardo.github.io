@@ -7,6 +7,11 @@ document.getElementById('flag-it').addEventListener('click', function() {
     toggleLanguage('it');
 });
 
+document.getElementById("explore-button").addEventListener("click", function () {
+    document.getElementById("map").scrollIntoView({ behavior: "smooth" });
+});
+
+
 function toggleLanguage(lang) {
     const langElementsEn = document.querySelectorAll('[data-lang="en"]');
     const langElementsIt = document.querySelectorAll('[data-lang="it"]');

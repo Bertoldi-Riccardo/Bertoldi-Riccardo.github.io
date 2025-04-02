@@ -10,6 +10,12 @@ document.getElementById('flag-it').addEventListener('click', function() {
 document.getElementById("explore-button").addEventListener("click", function () {
     document.getElementById("map").scrollIntoView({ behavior: "smooth" });
 });
+document.querySelectorAll('.cta-button').forEach(button => {
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById("explore").scrollIntoView({ behavior: "smooth" });
+    });
+});
 
 
 function toggleLanguage(lang) {

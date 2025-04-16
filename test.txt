@@ -7,3 +7,37 @@ An evolving collection of historical and modern photographs of the Chernobyl dis
 Nome: Archivio Visivo
 Descrizione:
 Una raccolta in continua evoluzione di fotografie storiche e moderne del sito del disastro di Chernobyl, dei liquidatori, della città di Pripyat e del volto mutevole della Zona di Esclusione.
+
+
+🧩 Page 1: The Story: Chernobyl Disaster
+English Title:
+The Story: Chernobyl Disaster
+Description:
+Discover the full timeline and dramatic events of the Chernobyl disaster — from its construction and catastrophic explosion to the long-term consequences for people, politics, and the planet.
+
+Italian:
+La Storia: Il Disastro di Chernobyl
+Descrizione:
+Scopri la cronologia completa e gli eventi drammatici del disastro di Chernobyl — dalla costruzione e l’esplosione catastrofica alle conseguenze a lungo termine per le persone, la politica e l’ambiente.
+
+⚛️ Page 2: How Nuclear Power Works
+English Title:
+How Nuclear Power Works
+Description:
+Understand the science behind nuclear energy — how reactors generate power, what went wrong at Chernobyl, and how modern systems aim to prevent similar disasters.
+
+Italian:
+Come Funziona l’Energia Nucleare
+Descrizione:
+Comprendi la scienza dell’energia nucleare — come i reattori generano elettricità, cosa è andato storto a Chernobyl e come i sistemi moderni cercano di evitare disastri simili.
+
+🖼️ Page 3: Visual Archive
+English Title:
+Visual Archive
+Description:
+An evolving collection of historical and modern photographs of the Chernobyl disaster site, the liquidators, the city of Pripyat, and the changing face of the Exclusion Zone.
+
+Italian:
+Archivio Visivo
+Descrizione:
+Una raccolta in continua evoluzione di fotografie storiche e moderne del sito del disastro di Chernobyl, dei liquidatori, della città di Pripyat e del volto mutevole della Zona di Esclusione.

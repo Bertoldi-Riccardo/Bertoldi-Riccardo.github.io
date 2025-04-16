@@ -41,3 +41,19 @@ Italian:
 Archivio Visivo
 Descrizione:
 Una raccolta in continua evoluzione di fotografie storiche e moderne del sito del disastro di Chernobyl, dei liquidatori, della città di Pripyat e del volto mutevole della Zona di Esclusione.
+
+
+
+
+
+🖼️ Page Title (English):
+Chernobyl in Images
+
+Description:
+A curated collection of photographs capturing the haunting beauty, human stories, and lasting impact of the Chernobyl disaster — from abandoned cityscapes to satellite perspectives and portraits of those affected.
+
+🇮🇹 Titolo della Pagina (Italiano):
+Chernobyl in Immagini
+
+Descrizione:
+Una raccolta curata di fotografie che raccontano la bellezza inquietante, le storie umane e l’impatto duraturo del disastro di Chernobyl — dai paesaggi urbani abbandonati alle immagini satellitari e ai volti di chi è stato coinvolto.

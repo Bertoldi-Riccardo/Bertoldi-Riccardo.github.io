@@ -60,18 +60,16 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: "story-card-it", detail: "detail-story" },
         { id: "power-card-en", detail: "detail-power" },
         { id: "power-card-it", detail: "detail-power" },
-        // Add more if needed
+        // Aggiungi qui se vuoi visual archive
     ];
 
     bindings.forEach(({ id, detail }) => {
         const card = document.getElementById(id);
         if (card) {
-            const title = card.querySelector("h3");
+            const clickable = card;
             if (title) {
                 title.style.cursor = "pointer";
-                title.addEventListener("click", () => {
-                    showDetail(detail);
-                });
+                title.addEventListener("click", () => showDetail(detail));
             }
         }
     });

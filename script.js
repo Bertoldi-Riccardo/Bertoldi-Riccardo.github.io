@@ -3,48 +3,63 @@ document.addEventListener("DOMContentLoaded", function() {
     const langToggle = document.getElementById('lang-toggle');
     const flagEn = document.getElementById('flag-en');
     const flagIt = document.getElementById('flag-it');
-    
     let currentLang = 'en';
     
     langToggle.addEventListener('click', function() {
-        if (currentLang === 'en') {
-            currentLang = 'it';
-            flagEn.style.display = 'none';
-            flagIt.style.display = 'block';
-        } else {
-            currentLang = 'en';
-            flagEn.style.display = 'block';
-            flagIt.style.display = 'none';
-        }
-        
-        document.querySelectorAll('[data-lang]').forEach(element => {
-            if (element.getAttribute('data-lang') === currentLang) {
-                element.style.display = '';
-            } else {
-                element.style.display = 'none';
-            }
+        currentLang = currentLang === 'en' ? 'it' : 'en';
+        flagEn.style.display = currentLang === 'en' ? '' : 'none';
+        flagIt.style.display = currentLang === 'it' ? '' : 'none';
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.style.display = el.getAttribute('data-lang') === currentLang ? '' : 'none';
         });
     });
-
-    // Enhanced smooth scrolling with offset for fixed header
+    
+    // Smooth scrolling for anchors
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
             if (targetElement) {
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = targetPosition - 20; // Adjust for any fixed header
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 20;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
         });
     });
+
+    // DETAIL TOGGLE
+    const detailSection = document.getElementById('detail');
+    const allDetails = detailSection.querySelectorAll('.detail-content');
+
+    function showDetail(detailId) {
+        // Nascondi tutte le detail-content
+        allDetails.forEach(div => div.style.display = 'none');
+        // Mostra la sezione detail e il blocco giusto nella lingua corrente
+        detailSection.style.display = '';
+        const target = document.getElementById(detailId);
+        target.style.display = '';
+        target.querySelectorAll('[data-lang]').forEach(el => {
+            el.style.display = el.getAttribute('data-lang') === currentLang ? '' : 'none';
+        });
+        // Scorri fino a detail
+        detailSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Collega il click sui titoli <h3> delle card
+    [
+      { cardId: 'story-card-en', detailId: 'detail-story' },
+      { cardId: 'story-card-it', detailId: 'detail-story' },
+      { cardId: 'power-card-en', detailId: 'detail-power' },
+      { cardId: 'power-card-it', detailId: 'detail-power' },
+      // eventualmente aggiungi archive-card per il terzo:
+      // { cardId: 'archive-card-en', detailId: 'detail-archive' },
+      // { cardId: 'archive-card-it', detailId: 'detail-archive' },
+    ].forEach(mapping => {
+        const card = document.getElementById(mapping.cardId);
+        if (card) {
+            const title = card.querySelector('h3');
+            title.style.cursor = 'pointer';
+            title.addEventListener('click', () => showDetail(mapping.detailId));
+        }
+    });
 });
-
-

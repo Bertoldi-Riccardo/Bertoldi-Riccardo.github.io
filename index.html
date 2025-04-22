@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chernobyl & Nuclear Power</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Language Toggle -->
     <div id="lang-toggle" class="lang-toggle">
-        <span id="flag-en" class="flag-btn">🇬🇧</span>
-        <span id="flag-it" class="flag-btn" style="display:none;">🇮🇹</span>
+        <span id="flag-en" class="flag-btn" data-lang="en">🇬🇧</span>
+        <span id="flag-it" class="flag-btn" data-lang="it" style="display:none;">🇮🇹</span>
     </div>
 
+    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
             <h1 data-lang="en">Chernobyl & Nuclear Power</h1>
@@ -25,41 +27,42 @@
         </div>
     </header>
 
+    <!-- Cards Section -->
     <section id="explore" class="content-section">
         <h2 data-lang="en">Discover the Story</h2>
         <h2 data-lang="it" style="display:none;">Scopri la Storia</h2>
         <div class="card-container">
-            <!-- Page 1: The Story -->
-            <div class="card" data-lang="en">
+            <!-- Story Card -->
+            <div class="card" data-lang="en" id="story-card-en">
                 <div class="card-icon">🧩</div>
                 <h3>The Story: Chernobyl Disaster</h3>
                 <p>Discover the full timeline and dramatic events of the Chernobyl disaster — from its construction and catastrophic explosion to the long-term consequences for people, politics, and the planet.</p>
             </div>
-            <div class="card" data-lang="it" style="display:none;">
+            <div class="card" data-lang="it" style="display:none;" id="story-card-it">
                 <div class="card-icon">🧩</div>
                 <h3>La Storia: Il Disastro di Chernobyl</h3>
                 <p>Scopri la cronologia completa e gli eventi drammatici del disastro di Chernobyl — dalla costruzione e l'esplosione catastrofica alle conseguenze a lungo termine per le persone, la politica e l'ambiente.</p>
             </div>
-            
-            <!-- Page 2: How Nuclear Power Works -->
-            <div class="card" data-lang="en">
+
+            <!-- Power Works Card -->
+            <div class="card" data-lang="en" id="power-card-en">
                 <div class="card-icon">⚛️</div>
                 <h3>How Nuclear Power Works</h3>
                 <p>Understand the science behind nuclear energy — how reactors generate power, what went wrong at Chernobyl, and how modern systems aim to prevent similar disasters.</p>
             </div>
-            <div class="card" data-lang="it" style="display:none;">
+            <div class="card" data-lang="it" style="display:none;" id="power-card-it">
                 <div class="card-icon">⚛️</div>
                 <h3>Come Funziona l'Energia Nucleare</h3>
                 <p>Comprendi la scienza dell'energia nucleare — come i reattori generano elettricità, cosa è andato storto a Chernobyl e come i sistemi moderni cercano di evitare disastri simili.</p>
             </div>
-            
-            <!-- Page 3: Visual Archive -->
-            <div class="card" data-lang="en">
+
+            <!-- Archive Card -->
+            <div class="card" data-lang="en" id="archive-card-en">
                 <div class="card-icon">🖼️</div>
                 <h3>Chernobyl in Images</h3>
                 <p>An evolving collection of historical and modern photographs of the Chernobyl disaster site, the liquidators, the city of Pripyat, and the changing face of the Exclusion Zone.</p>
             </div>
-            <div class="card" data-lang="it" style="display:none;">
+            <div class="card" data-lang="it" style="display:none;" id="archive-card-it">
                 <div class="card-icon">🖼️</div>
                 <h3>Chernobyl in Immagini</h3>
                 <p>Una raccolta in continua evoluzione di fotografie storiche e moderne del sito del disastro di Chernobyl, dei liquidatori, della città di Pripyat e del volto mutevole della Zona di Esclusione.</p>
@@ -67,9 +70,200 @@
         </div>
     </section>
 
+    <!-- Dynamic Detail Section -->
+    <section id="detail" class="content-section" style="display: none;">
+
+        <!-- Detail: The Story -->
+        <div class="detail-content" id="detail-story">
+            <h2 data-lang="en">Chernobyl: From Construction to Catastrophe and Beyond</h2>
+            <h2 data-lang="it" style="display:none;">Chernobyl: Dalla Costruzione alla Catastrofe e Oltre</h2>
+
+            <h3 data-lang="en">1. The Beginning: Planning and Construction (1960s–1983)</h3>
+            <ul data-lang="en">
+                <li><strong>1967:</strong> Planning begins for the Chernobyl Nuclear Power Plant in northern Ukraine.</li>
+                <li><strong>1970:</strong> Construction begins near the new city of Pripyat.</li>
+                <li><strong>1977–1983:</strong> Four RBMK-1000 reactors become operational:
+                    <ul>
+                        <li>1977: Reactor 1</li>
+                        <li>1978: Reactor 2</li>
+                        <li>1981: Reactor 3</li>
+                        <li>1983: Reactor 4 (the one that would later explode)</li>
+                    </ul>
+                </li>
+                <li><em>Ignored design flaws:</em>
+                    <ul>
+                        <li>Positive void coefficient</li>
+                        <li>Graphite-tipped control rods</li>
+                        <li>No containment structure</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 data-lang="en">2. Prelude to Disaster: April 1986</h3>
+            <p data-lang="en"><strong>Objective:</strong> Test whether turbines could power coolant pumps during a blackout.</p>
+            <ul data-lang="en">
+                <li><strong>April 25:</strong> Morning: power reduction begins</li>
+                <li><strong>Afternoon:</strong> Delayed 9 hours by Kyiv grid demand</li>
+                <li><strong>Evening:</strong> Operators exhausted, new shift unprepared</li>
+            </ul>
+
+            <h3 data-lang="en">3. The Disaster: April 26, 1986, 1:23 AM</h3>
+            <ul data-lang="en">
+                <li>Reactor power dropped to 30 MW (too low)</li>
+                <li>Operators disabled safety systems</li>
+                <li>Withdrew too many control rods</li>
+                <li>Operated the reactor in unstable conditions</li>
+                <li><strong>1:23:04 AM:</strong> Test begins → coolant flow decreases → steam increases reactivity</li>
+                <li><strong>AZ-5 button pressed:</strong> Graphite rod tips temporarily increase reactivity</li>
+                <li><strong>1:23:40 AM:</strong> Explosion → 1,000-ton lid blown off → reactor core exposed</li>
+            </ul>
+
+            <h3 data-lang="en">4. Immediate Aftermath (April–May 1986)</h3>
+            <ul data-lang="en">
+                <li><strong>First Responders:</strong> Unaware of radiation, used water to fight fires; many died within weeks</li>
+                <li><strong>Acute Radiation Syndrome (ARS):</strong> Vomiting, burns, unconsciousness; 28 deaths by May, 134 diagnosed</li>
+                <li><strong>Evacuation:</strong> April 27: Pripyat evacuated (49,000 people); April 28: Sweden detects radiation, USSR admits accident</li>
+            </ul>
+
+            <h3 data-lang="en">5. Global Fallout and Soviet Secrecy</h3>
+            <p data-lang="en">Radioactive cloud spread across Europe — key isotopes released: Iodine-131, Cesium-137, Strontium-90. USSR proceeded with May Day parades despite risks.</p>
+
+            <h3 data-lang="en">6. Liquidators and the Sarcophagus</h3>
+            <p data-lang="en">Over 600,000 liquidators cleared debris manually and built the sarcophagus, completed November 1986. Longterm death estimates: 4,000–90,000+.</p>
+
+            <h3 data-lang="en">7. From Recovery to Shutdown (1987–2000)</h3>
+            <ul data-lang="en">
+                <li>1987: Reactors 1, 2, and 3 restarted</li>
+                <li>1991: Reactor 2 fire; closed permanently</li>
+                <li>1996: Reactor 1 closed</li>
+                <li>2000: Reactor 3 shut down, ending operations</li>
+            </ul>
+
+            <h3 data-lang="en">8. New Safe Confinement (2000–2016)</h3>
+            <p data-lang="en">Original sarcophagus deteriorating; NSC built and completed in 2016—a steel arch structure for remote dismantling, designed to last 100 years.</p>
+
+            <h3 data-lang="en">9. Legacy and Current Status (2025)</h3>
+            <ul data-lang="en">
+                <li>Health effects: Spike in thyroid cancer; WHO: 4,000–9,000 deaths; Greenpeace: tens of thousands</li>
+                <li>Exclusion Zone: 30 km radius around plant; wildlife thriving; some residents returned (“self-settlers”)</li>
+                <li>Tourism: Guided tours to Pripyat and reactor site</li>
+                <li>2022 Invasion: Russian troops briefly occupied site; workers taken hostage, later freed</li>
+            </ul>
+
+            <h3 data-lang="en">10. Impact and Lessons Learned</h3>
+            <ul data-lang="en">
+                <li>Nuclear safety: Reactor redesigns; stronger international protocols</li>
+                <li>Political consequences: USSR credibility eroded; contributed to collapse</li>
+                <li>Cultural influence: Documentaries, HBO’s Chernobyl; books, films, video games</li>
+                <li>Psychological impact: PTSD, anxiety, depression among survivors</li>
+            </ul>
+
+            <h3 data-lang="en">Summary Table</h3>
+            <table data-lang="en">
+                <tr><th>Topic</th><th>Key Facts</th></tr>
+                <tr><td>Disaster date</td><td>April 26, 1986, 1:23 AM</td></tr>
+                <tr><td>Reactor type</td><td>RBMK-1000</td></tr>
+                <tr><td>Cause</td><td>Design flaws + human error</td></tr>
+                <tr><td>Immediate deaths</td><td>31 (2 explosion, 29 radiation)</td></tr>
+                <tr><td>Long-term deaths</td><td>4,000–90,000+ (estimated)</td></tr>
+                <tr><td>Evacuated</td><td>Over 300,000 people</td></tr>
+                <tr><td>Containment</td><td>Sarcophagus (1986), NSC (2016)</td></tr>
+                <tr><td>Exclusion zone</td><td>30 km radius</td></tr>
+                <tr><td>Wildlife</td><td>Rebounding strongly</td></tr>
+                <tr><td>Tourism</td><td>Regulated and growing</td></tr>
+                <tr><td>Current risk</td><td>Still radioactive, monitored</td></tr>
+            </table>
+        </div>
+
+        <!-- Detail: How Nuclear Power Works -->
+        <div class="detail-content" id="detail-power" style="display: none;">
+            <h2 data-lang="en">⚛️ All About Nuclear Energy</h2>
+            <h2 data-lang="it" style="display:none;">⚛️ Tutto sull’Energia Nucleare</h2>
+
+            <h3 data-lang="en">🔬 What Is Nuclear Energy?</h3>
+            <ul data-lang="en">
+                <li>Fission – splitting large atoms into smaller ones (used today)</li>
+                <li>Fusion – merging small atoms into larger ones (future of nuclear energy)</li>
+            </ul>
+            <p data-lang="en">Nuclear energy produces massive amounts of electricity with no carbon emissions during operation...</p>
+
+            <h3 data-lang="en">☢️ 1. Fission: The Power Source of Today’s Nuclear Plants</h3>
+            <p data-lang="en">Fission happens when a heavy atom (like uranium-235 or plutonium-239) splits into smaller parts. This reaction releases a huge amount of heat and free neutrons, causing a chain reaction controlled to generate electricity.</p>
+
+            <h3 data-lang="en">⚙️ How a Nuclear Power Plant Works</h3>
+            <ol data-lang="en">
+                <li>Fuel rods with enriched uranium or plutonium are placed in the reactor core.</li>
+                <li>Controlled fission reactions produce heat.</li>
+                <li>Heat turns water into steam.</li>
+                <li>Steam drives turbines → generators make electricity.</li>
+                <li>Control rods absorb excess neutrons to control the reaction.</li>
+                <li>Coolants absorb and transfer heat.</li>
+                <li>The entire system is protected by a containment structure.</li>
+            </ol>
+
+            <h3 data-lang="en">🛡️ Safety Features in Modern Reactors</h3>
+            <ul data-lang="en">
+                <li>Negative feedback loops slow the reaction if it overheats</li>
+                <li>Multiple backup cooling systems</li>
+                <li>Containment domes prevent radioactive leaks</li>
+                <li>Passive safety systems that work even without power or human input</li>
+            </ul>
+
+            <h3 data-lang="en">🚨 2. What Went Wrong at Chernobyl</h3>
+            <p data-lang="en">At Chernobyl, a flawed RBMK design and human errors led to a runaway reaction: positive void coefficient, graphite-tipped control rods, no containment building, and an AZ-5 shutdown spike.</p>
+
+            <h3 data-lang="en">🌞 3. Fusion: The Future of Nuclear Energy</h3>
+            <p data-lang="en">Fusion combines light atoms (like deuterium and tritium) into heavier ones, releasing enormous energy—the same process as in the sun.</p>
+
+            <h3 data-lang="en">⚖️ Fission vs. Fusion (At a Glance)</h3>
+            <table data-lang="en">
+                <tr><th>Feature</th><th>Fission</th><th>Fusion</th></tr>
+                <tr><td>Type of Reaction</td><td>Atom splits</td><td>Atoms combine</td></tr>
+                <tr><td>Fuel</td><td>Uranium, Plutonium</td><td>Hydrogen isotopes (D, T)</td></tr>
+                <tr><td>Waste</td><td>Long-lived radioactive</td><td>Minimal, short-lived</td></tr>
+                <tr><td>Emissions</td><td>No CO₂, radioactive waste</td><td>No CO₂, no long-term waste</td></tr>
+                <tr><td>Safety</td><td>Risk of meltdown</td><td>No chain reaction → safer</td></tr>
+                <tr><td>Status</td><td>Operational worldwide</td><td>Experimental</td></tr>
+            </table>
+
+            <h3 data-lang="en">🚧 Why Fusion Isn’t Ready Yet</h3>
+            <ul data-lang="en">
+                <li>Requires extremely high temperatures (100 million °C)</li>
+                <li>Needs powerful magnetic fields to contain the plasma</li>
+                <li>Experiments like ITER, JET, NIF ongoing</li>
+                <li>Still not net positive, but progress rapid</li>
+            </ul>
+
+            <h3 data-lang="en">🌍 4. Nuclear Energy in the Real World</h3>
+            <p data-lang="en">Over 30 countries use nuclear energy, providing ~10% of global electricity, clean and reliable baseload power.</p>
+
+            <h3 data-lang="en">😬 But There Are Concerns…</h3>
+            <ul data-lang="en">
+                <li>Radioactive waste storage for thousands of years</li>
+                <li>Past accidents raised safety fears</li>
+                <li>Weapons proliferation risks</li>
+                <li>High construction and maintenance costs</li>
+            </ul>
+
+            <h3 data-lang="en">🔮 5. The Future of Nuclear Power</h3>
+            <p data-lang="en">Fusion may revolutionize energy; SMRs offer cheaper, safer power; AI and automation enhance safety and efficiency.</p>
+
+            <h3 data-lang="en">📘 Key Takeaways</h3>
+            <ul data-lang="en">
+                <li>Nuclear energy is powerful but requires careful handling</li>
+                <li>Fission powers today; fusion is tomorrow’s dream</li>
+                <li>Modern reactors have robust passive safety</li>
+                <li>Chernobyl underscores transparency and training</li>
+                <li>Innovation may lead to a carbon-free future</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p data-lang="en">&copy;Chernobyl & Nuclear Power</p>
-        <p data-lang="it" style="display:none;">&copy;Chernobyl & Energia Nucleare</p>
+        <p data-lang="en">&copy; Chernobyl & Nuclear Power</p>
+        <p data-lang="it" style="display:none;">&copy; Chernobyl & Energia Nucleare</p>
     </footer>
 </body>
 </html>

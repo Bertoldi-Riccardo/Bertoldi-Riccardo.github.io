@@ -34,28 +34,25 @@ document.addEventListener("DOMContentLoaded", function () {
     function showDetail(detailId) {
         const detailSection = document.getElementById("detail");
         const allDetails = detailSection.querySelectorAll(".detail-content");
-    
-        // Nascondi tutte le sezioni di dettaglio
+
+        // Hide all detail blocks
         allDetails.forEach((div) => {
             div.style.display = "none";
         });
-    
-        // Mostra la sezione principale di dettaglio
+
+        // Show detail section
         detailSection.style.display = "block";
-    
-        // Seleziona il blocco di dettaglio giusto
+
+        // Show only correct language in the correct detail block
         const targetDetail = document.getElementById(detailId);
         targetDetail.style.display = "block";
-    
-        // Nascondi tutte le lingue nel dettaglio, poi mostra solo quella attiva
         targetDetail.querySelectorAll("[data-lang]").forEach((el) => {
             el.style.display = el.getAttribute("data-lang") === currentLang ? "" : "none";
         });
-    
-        // Scrolla fino alla sezione
+
+        // Scroll to detail
         detailSection.scrollIntoView({ behavior: "smooth" });
     }
-
 
     // Attach listeners to h3 titles of the cards
     const bindings = [
@@ -63,16 +60,18 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: "story-card-it", detail: "detail-story" },
         { id: "power-card-en", detail: "detail-power" },
         { id: "power-card-it", detail: "detail-power" },
-        // Aggiungi qui se vuoi visual archive
+        // Add more if needed
     ];
 
     bindings.forEach(({ id, detail }) => {
         const card = document.getElementById(id);
         if (card) {
-            const clickable = card;
+            const title = card.querySelector("h3");
             if (title) {
                 title.style.cursor = "pointer";
-                title.addEventListener("click", () => showDetail(detail));
+                title.addEventListener("click", () => {
+                    showDetail(detail);
+                });
             }
         }
     });

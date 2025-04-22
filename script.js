@@ -66,10 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
     bindings.forEach(({ id, detail }) => {
         const card = document.getElementById(id);
         if (card) {
-            const clickable = card;
-            if (title) {
-                title.style.cursor = "pointer";
-                title.addEventListener("click", () => showDetail(detail));
+            if (card) {
+                card.style.cursor = "pointer";
+                card.addEventListener("click", () => showDetail(detail));
             }
         }
     });

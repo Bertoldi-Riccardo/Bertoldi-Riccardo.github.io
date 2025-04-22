@@ -34,25 +34,28 @@ document.addEventListener("DOMContentLoaded", function () {
     function showDetail(detailId) {
         const detailSection = document.getElementById("detail");
         const allDetails = detailSection.querySelectorAll(".detail-content");
-
-        // Hide all detail blocks
+    
+        // Nascondi tutte le sezioni di dettaglio
         allDetails.forEach((div) => {
             div.style.display = "none";
         });
-
-        // Show detail section
+    
+        // Mostra la sezione principale di dettaglio
         detailSection.style.display = "block";
-
-        // Show only correct language in the correct detail block
+    
+        // Seleziona il blocco di dettaglio giusto
         const targetDetail = document.getElementById(detailId);
         targetDetail.style.display = "block";
+    
+        // Nascondi tutte le lingue nel dettaglio, poi mostra solo quella attiva
         targetDetail.querySelectorAll("[data-lang]").forEach((el) => {
             el.style.display = el.getAttribute("data-lang") === currentLang ? "" : "none";
         });
-
-        // Scroll to detail
+    
+        // Scrolla fino alla sezione
         detailSection.scrollIntoView({ behavior: "smooth" });
     }
+
 
     // Attach listeners to h3 titles of the cards
     const bindings = [

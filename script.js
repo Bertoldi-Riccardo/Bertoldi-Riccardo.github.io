@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bindings.forEach(({ id, detail }) => {
         const card = document.getElementById(id);
         if (card) {
-            const title = card.querySelector("h3");
+            const clickable = card;
             if (title) {
                 title.style.cursor = "pointer";
                 title.addEventListener("click", () => showDetail(detail));

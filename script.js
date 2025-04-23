@@ -1,76 +1,88 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // ========== LANGUAGE TOGGLE ========== //
     const langToggle = document.getElementById("lang-toggle");
     const flagEn = document.getElementById("flag-en");
     const flagIt = document.getElementById("flag-it");
+    let currentLang = "en"; // Default language
 
-    let currentLang = "en";
-
-    // Language toggle
-    langToggle.addEventListener("click", function () {
+    function toggleLanguage() {
+        // Switch between English and Italian
         currentLang = currentLang === "en" ? "it" : "en";
+        
+        // Toggle flag visibility
         flagEn.style.display = currentLang === "en" ? "" : "none";
         flagIt.style.display = currentLang === "it" ? "" : "none";
-
-        document.querySelectorAll("[data-lang]").forEach((el) => {
+        
+        // Show/hide language-specific content
+        document.querySelectorAll("[data-lang]").forEach(el => {
             el.style.display = el.getAttribute("data-lang") === currentLang ? "" : "none";
         });
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href");
-            const target = document.querySelector(targetId);
-            if (target) {
-                const yOffset = -20;
-                const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: "smooth" });
-            }
-        });
-    });
-
-    // Show detail function
-    function showDetail(detailId) {
-        const detailSection = document.getElementById("detail");
-        const allDetails = detailSection.querySelectorAll(".detail-content");
-
-        // Hide all detail blocks
-        allDetails.forEach((div) => {
-            div.style.display = "none";
-        });
-
-        // Show detail section
-        detailSection.style.display = "block";
-
-        // Show only correct language in the correct detail block
-        const targetDetail = document.getElementById(detailId);
-        targetDetail.style.display = "block";
-        targetDetail.querySelectorAll("[data-lang]").forEach((el) => {
-            el.style.display = el.getAttribute("data-lang") === currentLang ? "" : "none";
-        });
-
-        // Scroll to detail
-        detailSection.scrollIntoView({ behavior: "smooth" });
     }
 
-    // Attach listeners to h3 titles of the cards
-    const bindings = [
-        { id: "story-card-en", detail: "detail-story" },
-        { id: "story-card-it", detail: "detail-story" },
-        { id: "power-card-en", detail: "detail-power" },
-        { id: "power-card-it", detail: "detail-power" },
-        // Aggiungi qui se vuoi visual archive
-    ];
+    // ========== SMOOTH SCROLLING ========== //
+    function setupSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    window.scrollTo({
+                        top: target.getBoundingClientRect().top + window.pageYOffset - 20,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    }
 
-    bindings.forEach(({ id, detail }) => {
-        const card = document.getElementById(id);
-        if (card) {
-            const clickable = card;
-            if (title) {
-                title.style.cursor = "pointer";
-                title.addEventListener("click", () => showDetail(detail));
-            }
+    // ========== SECTION MANAGEMENT ========== //
+    function showSection(sectionId) {
+        // Hide all content sections except the cards section
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.style.display = section.id === 'explore' ? 'block' : 'none';
+        });
+        
+        // Show requested section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.style.display = 'block';
+            window.scrollTo({
+                top: targetSection.offsetTop - 20,
+                behavior: 'smooth'
+            });
         }
-    });
+    }
+
+    // ========== CARD CLICK HANDLERS ========== //
+    function setupCardInteractions() {
+        const cardBindings = [
+            { cardId: 'power-card-en', sectionId: 'detail-power' },
+            { cardId: 'power-card-it', sectionId: 'detail-power' },
+            { cardId: 'story-card-en', sectionId: 'detail-story' },
+            { cardId: 'story-card-it', sectionId: 'detail-story' },
+            { cardId: 'archive-card-en', sectionId: 'detail-archive' },
+            { cardId: 'archive-card-it', sectionId: 'detail-archive' }
+        ];
+
+        cardBindings.forEach(({ cardId, sectionId }) => {
+            const card = document.getElementById(cardId);
+            if (card) {
+                card.style.cursor = "pointer";
+                card.addEventListener('click', () => showSection(sectionId));
+            }
+        });
+    }
+
+    // ========== BACK BUTTONS ========== //
+    function setupBackButtons() {
+        document.querySelectorAll('.back-to-cards button').forEach(button => {
+            button.addEventListener('click', () => showSection('explore'));
+        });
+    }
+
+    // ========== INITIALIZE EVERYTHING ========== //
+    langToggle.addEventListener("click", toggleLanguage);
+    setupSmoothScrolling();
+    setupCardInteractions();
+    setupBackButtons();
 });
